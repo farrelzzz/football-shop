@@ -48,6 +48,9 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Push ke PWS: **`git push pws master`**
 
 ---  
+## Alasan Django Cocok Untuk Pemula
+Karena Django gratis, open source, cepat, memiliki banyak fitur untuk pengembangan web pada umumnya, dan penggunaan MVT cukup memudahkan pemula agar fokus ke proses inti pengembangan. Selain itu, penggunaan Python sebagai bahasa pemrograman membuat kode yang ditulis jadi rapi dan mudah dibaca, sehingga pengembangan bisa dilakukan dengan lebih cepat lagi.
 
+---
 ## Feedback Untuk Asdos
 Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang diberikan asdos saat sesi tutorial ataupun kolom faq di Discord sudah sangat membantu. 
