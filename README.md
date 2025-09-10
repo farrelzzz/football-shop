@@ -28,7 +28,7 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Tambahkan **`main`** ke **`INSTALLED_APPS`**
 
 ### 5. Implementasi Model  
-  * Isi **`models.py`** dalam aplikasi **`main`** dengan model yang ingin kita buat, yaitu **`Product`**
+  * Isi **`models.py`** dalam aplikasi **`main`** dengan model yang ingin kita buat, yaitu **`Product`** beserta atributnya
   * Migrasi model ke Django: **`python manage.py makemigrations`**
   * Migrasi model ke basis data lokal: **`python manage.py migrate`**
 
