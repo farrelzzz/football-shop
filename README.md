@@ -47,5 +47,7 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Push ke GitHub dengan melakukan **`git add`**, **`commit`**, dan **`push`**
   * Push ke PWS: **`git push pws master`**
 
+---  
 
----
+## Feedback Untuk Asdos
+Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang diberikan asdos saat sesi tutorial ataupun kolom faq di Discord sudah sangat membantu. 
