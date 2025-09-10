@@ -28,12 +28,24 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Tambahkan **`main`** ke **`INSTALLED_APPS`**
 
 ### 5. Implementasi Model  
+  * Isi **`models.py`** dalam aplikasi **`main`** dengan model yang ingin kita buat, yaitu **`Product`**
+  * Migrasi model ke Django: **`python manage.py makemigrations`**
+  * Migrasi model ke basis data lokal: **`python manage.py migrate`**
 
 ### 6. Menghubungkan View dan Template  
+  * Buat fungsi **`show_main`** dalam **`views.py`** yang berada di **`main`**,
+    tujuannya agar bisa mengatur permintaan HTTP dan mengembalikan tampilan yang sesuai
+  * Modifikasi template  **`main.html`** agar bisa menampilkan nama aplikasi, nama sendiri, dan npm
 
-### 7. Konfigurasi Routing URL  
+### 7. Konfigurasi Routing URL
+  * Buat berkas  **`urls.py`** di dalam  **`main`**
+  * Menambahkan  **`path('', show_main, name='show_main')`** dalam **`urlpattern`** yang ada di **`urls.py`** dalam **`main`** 
+  * Menambahkan  **`path('', include('main.urls'))`** dalam **`urlpattern`** yang ada di **`urls.py`** dalam direktori proyek **`football-shop`**
 
-### 8. Deploy ke PWS  
+### 8. Deployment Proyek
+  * Tambahkan URL deployment PWS dalam **`ALLOWED_HOSTS`** yang berada di **`settings.py`**
+  * Push ke GitHub dengan melakukan **`git add`**, **`commit`**, dan **`push`**
+  * Push ke PWS: **`git push pws master`**
 
 
 ---
