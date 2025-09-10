@@ -23,7 +23,7 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Jalankan migrasi database: **`python manage.py migrate`**
   * Jalankan server Django: **`python manage.py runserver`**
 
-### 4. Membuat Aplikasi 'main' dalam Proyek 
+### 4. Membuat Aplikasi **`main`** dalam Proyek 
   * Buat direktori **`main`**: **`python manage.py startapp main`**
   * Tambahkan **`main`** ke **`INSTALLED_APPS`**
 
@@ -47,6 +47,9 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Push ke GitHub dengan melakukan **`git add`**, **`commit`**, dan **`push`**
   * Push ke PWS: **`git push pws master`**
 
+---
+## Peran **`settings.py`** Dalam Proyek Django  
+Dalam proyek Django, **`settings.py`** menjadi tempat di mana semua pengaturan dan konfigurasi seperti URL, daftar aplikasi, daftar host dan database aplikasi Django didefinisikan. Setiap kali kita mengubah konfigurasi mendasar, modifikasinya dilakukan di **`settings.py`**
 ---  
 ## Alasan Django Cocok Untuk Pemula
 Karena Django gratis, open source, cepat, memiliki banyak fitur untuk pengembangan web pada umumnya, dan penggunaan MVT cukup memudahkan pemula agar fokus ke proses inti pengembangan. Selain itu, penggunaan Python sebagai bahasa pemrograman membuat kode yang ditulis jadi rapi dan mudah dibaca, sehingga pengembangan bisa dilakukan dengan lebih cepat lagi.
