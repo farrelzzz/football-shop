@@ -49,7 +49,15 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
 
 ---
 ## Peran **`settings.py`** dalam Proyek Django
-Dalam proyek Django, **`settings.py`** menjadi tempat di mana semua pengaturan dan konfigurasi seperti URL, daftar aplikasi, daftar host dan database aplikasi Django didefinisikan. Setiap kali kita mengubah konfigurasi mendasar, modifikasinya dilakukan di **`settings.py`**
+Dalam proyek Django, **`settings.py`** menjadi tempat di mana semua pengaturan dan konfigurasi seperti URL, daftar aplikasi, daftar host, dan database aplikasi Django didefinisikan. Setiap kali kita mengubah konfigurasi mendasar, modifikasinya dilakukan di **`settings.py`**
+
+
+---
+## Cara Kerja Migrasi Database di Django
+  * Buat model di **`models.py`**
+  * Migrasi model ke Django: **`python manage.py makemigrations`**. Ini membuat DJango bisa melacak perubahan pada model basis data proyek yang kita buat
+  * Migrasi model ke basis data lokal: **`python manage.py migrate`**. Ini  mengubah struktur tabel basis data sesuai dengan perubahan model yang didefinisikan dalam kode terbaru yang kita buat.
+
 
 ---  
 ## Alasan Django Cocok Untuk Pemula
