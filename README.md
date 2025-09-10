@@ -23,17 +23,17 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
   * Jalankan migrasi database: **`python manage.py migrate`**
   * Jalankan server Django: **`python manage.py runserver`**
 
-## 4. Membuat Aplikasi 'main' dalam Proyek 
+### 4. Membuat Aplikasi 'main' dalam Proyek 
   * Buat direktori **`main`**: **`python manage.py startapp main`**
   * Tambahkan **`main`** ke **`INSTALLED_APPS`**
 
-## 5. Implementasi Model  
+### 5. Implementasi Model  
 
-## 6. Menghubungkan View dan Template  
+### 6. Menghubungkan View dan Template  
 
-## 7. Konfigurasi Routing URL  
+### 7. Konfigurasi Routing URL  
 
-## 8. Deploy ke PWS  
+### 8. Deploy ke PWS  
 
 
 ---
