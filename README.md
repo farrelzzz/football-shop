@@ -8,7 +8,7 @@ Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/
 
 ### 1. Inisiasi Proyek Django  
   * Buat direktori football-shop
-  * Buat virtual environment: `python -m venv env`
+  * Buat virtual environment: **`python -m venv env`**
   * Aktifkan virtual environment: 'env\Scripts\activate'
   * Siapkan dependencies dalam requirements.txt, lalu instal: 'pip install -r requirements.txt'
   * Buat proyek Django: 'django-admin startproject football_news .'
