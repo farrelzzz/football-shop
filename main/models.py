@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+#from django.utils import timezone
 
 class Product(models.Model):
     CATEGORY_CHOICES = [
@@ -17,22 +18,24 @@ class Product(models.Model):
     # created_at = models.DateTimeField(auto_now_add=True)
 
     ##
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
     price = models.IntegerField(default=0)
     description = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='update')
     thumbnail = models.URLField(blank=True, null=True)
     is_iconic = models.BooleanField(default=False)
-    product_views = models.PositiveIntegerField(default=0)
     is_featured = models.BooleanField(default=False)
+    products_views = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.title
     
     @property
-    def is_product_hot(self):
-        return self.product_views > 20
+    def is_products_hot(self):
+        return self.products_views > 20
         
     def increment_views(self):
-        self.product_views += 1
+        self.products_views += 1
         self.save()
