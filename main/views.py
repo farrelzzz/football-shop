@@ -3,18 +3,18 @@ from main.forms import ProductForm
 from main.models import Product
 
 def show_main(request):
-    products_list = Product.objects.all()
+    product_list = Product.objects.all()
 
     context = {
         # 'npm' : '240123456',
         'name': 'Muhammad Farrel Rajendra',
         'class': 'PBP D',
-        'products_list': products_list
+        'product_list': product_list
     }
 
     return render(request, "main.html", context)
 
-def create_products(request):
+def create_product(request):
     form = ProductForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
@@ -22,14 +22,14 @@ def create_products(request):
         return redirect('main:show_main')
 
     context = {'form': form}
-    return render(request, "create_products.html", context)
+    return render(request, "create_product.html", context)
 
-def show_products(request, id):
-    products = get_object_or_404(Product, pk=id)
-    products.increment_views()
+def show_product(request, id):
+    product = get_object_or_404(Product, pk=id)
+    product.increment_views()
 
     context = {
-        'products': products
+        'product': product
     }
 
-    return render(request, "products_detail.html", context)
+    return render(request, "product_detail.html", context)
