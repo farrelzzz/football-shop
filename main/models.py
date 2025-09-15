@@ -7,8 +7,8 @@ class Product(models.Model):
         ('jerseys', 'Jerseys'),
         ('shoes', 'Shoes'),
         ('socks', 'Socks'),
-        ('balls', 'Balls'),
         ('bags', 'Bags'),
+        ('balls', 'Balls'),
     ]
     
     # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
