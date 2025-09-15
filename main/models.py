@@ -5,9 +5,9 @@ from django.db import models
 class Product(models.Model):
     CATEGORY_CHOICES = [
         ('jerseys', 'Jerseys'),
+        ('pants', 'Pants'),
+        ('jackets', 'Jackets'),
         ('shoes', 'Shoes'),
-        ('socks', 'Socks'),
-        ('bags', 'Bags'),
         ('balls', 'Balls'),
     ]
     
