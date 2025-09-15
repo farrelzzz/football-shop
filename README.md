@@ -4,9 +4,10 @@ Muhammad Farrel Rajendra - 2406495653 - PBP D
 Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/  
 
 ---  
-<p style="text-align: center;">
-  <span style="color:red;">Tugas Individu 1</span>
-</p>
+<div style="text-align: center; color: red;">
+  Ini adalah teks berwarna merah dan rata tengah.
+</div>  
+
 ## Tahapan Pengerjaan  
 ### 1. Inisiasi Proyek Django  
   * Buat direktori football-shop
