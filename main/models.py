@@ -20,17 +20,21 @@ class Product(models.Model):
     # created_at = models.DateTimeField(auto_now_add=True)
     # is_featured = models.BooleanField(default=False)
 
-    ##
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # Atribut Wajib
     name = models.CharField(max_length=255)
-    price = models.IntegerField(default=0)
+    price = models.PositiveIntegerField(default=0)
     description = models.TextField()
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='update')
     thumbnail = models.URLField(blank=True, null=True)
-    is_iconic = models.BooleanField(default=False)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='update')
     is_featured = models.BooleanField(default=False)
+
+    # Atribut Tambahan
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    is_iconic = models.BooleanField(default=False)
     product_views = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
+    stock = models.PositiveIntegerField(default=0)
+
     
     def __str__(self):
         return self.title
