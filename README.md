@@ -1,11 +1,13 @@
-# Football Shop
+# Football Shop ⚽️
 Tugas Individu PBP Ganjil 25/26  
 Muhammad Farrel Rajendra - 2406495653 - PBP D  
 Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/  
 
 ---  
+<p style="text-align: center;">
+  <span style="color:red;">Tugas Individu 1</span>
+</p>
 ## Tahapan Pengerjaan  
-
 ### 1. Inisiasi Proyek Django  
   * Buat direktori football-shop
   * Buat virtual environment: **`python -m venv env`**
