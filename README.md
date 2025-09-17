@@ -72,7 +72,8 @@ Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang
 
 ---  
 ## Tugas Individu 2  
-### Mengapa Kita Memerlukan Data Delivery Dalam Implementasi Sebuah Platform    
+### Mengapa Kita Memerlukan Data Delivery Dalam Implementasi Sebuah Platform
+Karena kita perlu mengirimkan data yang telah diolah server ke tampilan web agar bisa menampilkan informasi atau merespons interaksi pengguna secara efektif. Implementasi data delivery yang baik seperti dengan format JSON dan XML penting dilakukan untuk membuat aplikasi yang responsif dan bisa mendukung berbagai platform dari satu backend yang sama, sehingga proses pengembangan aplikasi jadi lebih efisien.    
 
 --- 
 
@@ -81,14 +82,12 @@ Saya pribadi lebih suka JSON daripada XML karena sintaksnya lebih sederhana sepe
 
 ---  
 ### Fungsi Method is_valid() Pada Form Django  
-
----  
-
-### Fungsi Method is_valid dalam Form Django  
+Method is_valid() pada form Django berfungsi untuk memvalidasi data yang dikirim oleh pengguna. Setelah itu, data akan tipe data dari masukan pengguna akan disesuaikan dengan memanggil method clean(). Lalu, data-data yang sudah disesuaikan disimpan di atribut cleaned_data milik form. Method is_valid() juga akan mengumpulkan pesan error di atribut errors milik form. Terakhir, is_valid() akan mengembalikan boolean True jika semua data yang dimasukkan valid. Sebaliknya jika setidaknya ada 1 saja data yang tidak valid, kembaliannya adalah False.  
 
 ---  
 
 ### Pentingnya csrf_token Saat membuat Form Django  
+csrf_token saat membuat form Django penting karena berfungsi sebagai kunci keamanan utama untuk melindungi aplikasi yang dibuat dari serangan Cross-Site Request Forgery (CSRF).
 
 ---  
 
