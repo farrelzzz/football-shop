@@ -4,7 +4,7 @@ Muhammad Farrel Rajendra - 2406495653 - PBP D
 Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/  
 
 ---  
-## Tugas Individu 1  
+## Tugas Individu 1
 
 ### Tahapan Pengerjaan  
 #### 1. Inisiasi Proyek Django  
@@ -72,17 +72,38 @@ Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang
 
 ---  
 ## Tugas Individu 2  
-### Perlunya Data Delivery Dalam Implementasi Sebuah Platform  
+### Mengapa Kita Memerlukan Data Delivery Dalam Implementasi Sebuah Platform    
+
+--- 
 
 ### JSON vs XML  
 Saya pribadi lebih suka JSON daripada XML karena sintaksnya lebih sederhana seperti pasangan key-value, sehingga mudah dipahami. Selain itu JSON ebih ringan, lebih cepat diurai, dan cocok untuk aplikasi web modern dan API. Itulah beberapa alasan yang menjadikan JSON lebih populer daripada XML.  
 
+---  
+### Fungsi Method is_valid() Pada Form Django  
+
+---  
+
 ### Fungsi Method is_valid dalam Form Django  
+
+---  
 
 ### Pentingnya csrf_token Saat membuat Form Django  
 
+---  
+
 ### Feedback Untuk Asdos  
-Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang diberikan asdos saat sesi tutorial, juga kolom faq dan voice channel Discord sudah sangat membantu.  
+Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang diberikan asdos saat sesi tutorial, kolom faq, dan voice channel Discord sudah sangat membantu.  
+
+---  
+## Akses URL Lewat Postman  
+<img width="1771" height="908" alt="Screenshot 2025-09-15 221356" src="https://github.com/user-attachments/assets/c24d7772-6dd9-4cdb-88ad-8ec26d928061" />  
+<img width="1780" height="910" alt="Screenshot 2025-09-15 221444" src="https://github.com/user-attachments/assets/3c374056-6de6-4328-a519-5803964e4e90" />  
+<img width="1792" height="757" alt="Screenshot 2025-09-15 221545" src="https://github.com/user-attachments/assets/34dd4c92-cb29-4319-88f0-2ceff49f42e7" />  
+<img width="1783" height="724" alt="Screenshot 2025-09-15 221626" src="https://github.com/user-attachments/assets/ecc93b46-a2d0-4c5e-aa10-7b872eb11b34" />
+
+
+
 
 ---  
 
