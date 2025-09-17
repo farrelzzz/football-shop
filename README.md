@@ -91,6 +91,14 @@ csrf_token saat membuat form Django penting karena berfungsi sebagai kunci keama
 
 ---  
 
+### Langkah Pengerjaan
+  * Membuat fungsi show_xml, show_json, show_xml_by_id, dan show_json_by_id di main/views.py yang mengembalikan HttpResponse dengan argumen data pada model yang sudah di-serialize sesuai formatnya (dalam hal ini XML atau JSON) dan tpe kontennya berupa "application/{(JSON atau XML)}"
+  * Membuat routing pada URL masing-masing views di main/urls.py dengan menambahkan path di urlpatterns sesuai dengan mode views-nya dan fungsinya
+  *  Membuat html di main/templates yang bisa menampilkan data objek model yang memiliki tombol "Add" yang akan redirect ke halaman form, serta tombol "Detail" pada setiap data objek model yang akan menampilkan halaman detail objek.
+  *  Membuat html di main/templates untuk menambahkan objek model pada app sebelumnya.
+  *  Membuat html di main/templates untuk menampilkan detail dari setiap data objek model.
+---
+
 ### Feedback Untuk Asdos  
 Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang diberikan asdos saat sesi tutorial, kolom faq, dan voice channel Discord sudah sangat membantu.  
 
