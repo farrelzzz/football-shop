@@ -13,11 +13,16 @@ from django.urls import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
-    product_list = Product.objects.all()
+    filter_type = request.GET.get("filter", "all")  # default 'all'
+
+    if filter_type == "all":
+        product_list = Product.objects.all()
+    else:
+        product_list = Product.objects.filter(user=request.user)
 
     context = {
-        # 'npm' : '240123456',
-        'name': 'Muhammad Farrel Rajendra',
+        'npm' : '2496495653',
+        'name': request.user.username,
         'class': 'PBP D',
         'product_list': product_list,
         'last_login': request.COOKIES.get('last_login', 'Never'),
@@ -29,11 +34,15 @@ def show_main(request):
 def create_product(request):
     form = ProductForm(request.POST or None)
 
-    if form.is_valid() and request.method == "POST":
-        form.save()
+    if form.is_valid() and request.method == 'POST':
+        news_entry = form.save(commit = False)
+        news_entry.user = request.user
+        news_entry.save()
         return redirect('main:show_main')
 
-    context = {'form': form}
+    context = {
+        'form': form,
+        }
     return render(request, "create_product.html", context)
 
 def show_product(request, id):
