@@ -4,7 +4,7 @@ Muhammad Farrel Rajendra - 2406495653 - PBP D
 Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/  
 
 ---  
-## Tugas Individu 1
+## Tugas Individu 2
 
 ### Tahapan Pengerjaan  
 #### 1. Inisiasi Proyek Django  
@@ -71,7 +71,7 @@ Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang
 ---  
 
 ---  
-## Tugas Individu 2  
+## Tugas Individu 3  
 ### Mengapa Kita Memerlukan Data Delivery Dalam Implementasi Sebuah Platform
 Karena kita perlu mengirimkan data yang telah diolah server ke tampilan web agar bisa menampilkan informasi atau merespons interaksi pengguna secara efektif. Implementasi data delivery yang baik seperti dengan format JSON dan XML penting dilakukan untuk membuat aplikasi yang responsif dan bisa mendukung berbagai platform dari satu backend yang sama, sehingga proses pengembangan aplikasi jadi lebih efisien.    
 
@@ -103,15 +103,40 @@ csrf_token saat membuat form Django penting karena berfungsi sebagai kunci keama
 Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang diberikan asdos saat sesi tutorial, kolom faq, dan voice channel Discord sudah sangat membantu.  
 
 ---  
-## Akses URL Lewat Postman  
+### Akses URL Lewat Postman  
 <img width="1771" height="908" alt="Screenshot 2025-09-15 221356" src="https://github.com/user-attachments/assets/c24d7772-6dd9-4cdb-88ad-8ec26d928061" />  
 <img width="1780" height="910" alt="Screenshot 2025-09-15 221444" src="https://github.com/user-attachments/assets/3c374056-6de6-4328-a519-5803964e4e90" />  
 <img width="1792" height="757" alt="Screenshot 2025-09-15 221545" src="https://github.com/user-attachments/assets/34dd4c92-cb29-4319-88f0-2ceff49f42e7" />  
-<img width="1783" height="724" alt="Screenshot 2025-09-15 221626" src="https://github.com/user-attachments/assets/ecc93b46-a2d0-4c5e-aa10-7b872eb11b34" />
-
-
-
+<img width="1783" height="724" alt="Screenshot 2025-09-15 221626" src="https://github.com/user-attachments/assets/ecc93b46-a2d0-4c5e-aa10-7b872eb11b34" />  
 
 ---  
 
+## Tugas Individu 4  
+### Apa itu Django AuthenticationForm?   
+abc
+
+---
+   
+### Apa perbedaan antara autentikasi dan otorisasi? Bagaiamana Django mengimplementasikan kedua konsep tersebut?  
+abc
+
 ---  
+### Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web? 
+abc
+
+---  
+### Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?  
+abc
+
+---  
+### Cara Pengerjaan  
+  * Mengimplementasikan fungsi registrasi, login, dan logout
+    * abc
+  * Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal
+    * abc
+  * Menghubungkan model Product dengan User
+    * abc
+  * Menampilkan detail informasi pengguna yang sedang logged in
+    * abc
+
+--- 
