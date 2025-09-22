@@ -113,16 +113,32 @@ Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang
 
 ## Tugas Individu 4  
 ### Apa itu Django AuthenticationForm?   
-abc
+Django AuthenticationForm merupakan form bawaan dari sistem autentikasi Django yang didesain khusus untuk mekanisme login pengguna dengan menyediakan fields yang dibutuhkan pada umumnya dan logika validasi untuk autentikasi pengguna. Kelebihannya adalah mudah digunakan dan sudah menyediakan fields juga logika validasi untuk autentikasi pengguna. Kekurangannya adalah sangat bergantung pada model User, sehingga jika kita mau menambahkan field khusus yang tidak ada di user lain misalnya, maka kita perlu override form-nya atau membuat form yang khusus untuk user tersebut.  
 
 ---
-   
 ### Apa perbedaan antara autentikasi dan otorisasi? Bagaiamana Django mengimplementasikan kedua konsep tersebut?  
-abc
+**`Autentikasi`** merupakan proses untuk memverifikasi siapa pengguna yang menggunakan web aplikasi, sedangkan **`Otorisasi`** merupakan proses untuk memverifikasi apa saja akses yang dimiliki user. Contoh implementasi **`Autentikasi`** oleh Django adalah mekanisme login pengguna dengan menggunakan **`AuthenticationForm`** dan fungsi **`login`** bawaan Django. Lalu, contoh implementasi **`Otorisasi`** oleh Django adalah mekanisme pengguna hanya bisa melihat halaman utama dan detail produk jika ia sudah login, caranya dengan menambahkan dekorator **`@login_requiered(login_url='/login')`** di fungsi-fungsi yang menampilkan halaman utama dan detail produk.
 
 ---  
 ### Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web? 
-abc
+  * Cookies
+    * Kelebihan:
+      * Penyimpanan jangka panjang karena data pengguna tetap disimpan di perangkatnya meski browser ditutup.
+      * Meningkatkan pengalaman pengguna.
+      * Proses yang cepat karena datanya disimpan di sisi klien dan mengurangi beban kerja server.
+    * Kekurangan
+      * Ukuran penyimpanan terbatas.
+      * Pengguna dan pihak ketiga dapat meliht data yang disimpan, sehingga ada kemungkinan data itu disalahgunakan.
+        
+  * Session
+    * Kelebihan
+      * Keamanan yang lebih baik karena informasi yang disimpan di server lebih terjaga.
+      * Ukuran penyimpanan yang lebih besar.
+      * Tidak ada transmisi/pengiriman data, sehingga kinerja jadi lebih cepat.
+    * Kekurangan
+      * Berakhir saat browser ditutup
+      * Overhead kinerja
+      * Implementasinya lebih kompleks
 
 ---  
 ### Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?  
@@ -130,33 +146,42 @@ abc
 
 ---  
 ### Cara Pengerjaan  
-  * **Membuat Mekanisme Registrasi**
-    * Impor **`UserCreationForm`** dan **`messages`** di **`views.py`**. 
-    * Membuat fungsi **`register`** di **`views.py`** untuk menghasilkan formulir registrasi secara otomatis dan menghasilkan akun pengguna ketika data di-submit dari form (menggunakan **`UserCreationForm`**), menampilkan pesan kepada pengguna setelah melakukan suatu aksi (menggunakan **`messages`**), lalu melakukan redirect setelah data form berhasil disimpan (dengan **`return redirect('main:show_main')`**).
-    * Membuat template HTML halaman **`register`** bernama **`register.html`** di **`main/templates`**.
-    * Impor fungsi **`register`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`register`**.
-      
-  * **Membuat Mekanisme login**
-    * Impor **`AuthenticationForm`**, **`authenticate`**, dan **`login`**  di **`views.py`**.
-    * Membuat fungsi **`login_user`** di **`views.py`** untuk mengautentikasi pengguna yang ingin login, dengan cara: validasi form login (**`if request.method == 'POST'`**) dan buat session untuk untuk pengguna yang berhasil login (**`login(request, user)`**).
-    *  Membuat template HTML halaman **`login`** bernama **`login.html`** di **`main/templates`**.
-    *  Impor fungsi **`login_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`login_user`**.
+#### 1. Membuat Mekanisme Registrasi
+  * Impor **`UserCreationForm`** dan **`messages`** di **`views.py`**. 
+  * Membuat fungsi **`register`** di **`views.py`** untuk menghasilkan formulir registrasi secara otomatis dan menghasilkan akun pengguna ketika data di-submit dari form (menggunakan **`UserCreationForm`**), menampilkan pesan kepada pengguna setelah melakukan suatu aksi (menggunakan **`messages`**), lalu melakukan redirect setelah data form berhasil disimpan (dengan **`return redirect('main:show_main')`**).
+  * Membuat template HTML halaman **`register`** bernama **`register.html`** di **`main/templates`**.
+  * Impor fungsi **`register`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`register`**.
+
+#### 2. Membuat Mekanisme login
+  * Impor **`AuthenticationForm`**, **`authenticate`**, dan **`login`**  di **`views.py`**.
+  * Membuat fungsi **`login_user`** di **`views.py`** untuk mengautentikasi pengguna yang ingin login, dengan cara: validasi form login (**`if request.method == 'POST'`**) dan buat session untuk untuk pengguna yang berhasil login (**`login(request, user)`**).
+  * Membuat template HTML halaman **`login`** bernama **`login.html`** di **`main/templates`**.
+  * Impor fungsi **`login_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`login_user`**.
    
-  * **Membuat Mekanisme logout**
-    * Impor **`logout`**  di **`views.py`**.
-    * Membuat fungsi **`logout_user`** di **`views.py`** untuk melakukan mekanisme **`logout`**, dengan cara: menghapus sesi pengguna yang saat ini masuk (dengan **`logout(request)`**) dan mengarahkan pengguna ke halaman login dalam aplikasi Django (dengan cara **`return redirect('main:login')`**).
-    * Menambahkan tombol logout di **`main/templates/main.html`**.
-    *  Impor fungsi **`logout_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`logout_user`**.
+#### 3. Membuat Mekanisme logout
+  * Impor **`logout`**  di **`views.py`**.
+  * Membuat fungsi **`logout_user`** di **`views.py`** untuk melakukan mekanisme **`logout`**, dengan cara: menghapus sesi pengguna yang saat ini masuk (dengan **`logout(request)`**) dan mengarahkan pengguna ke halaman login dalam aplikasi Django (dengan cara **`return redirect('main:login')`**).
+  * Menambahkan tombol logout di **`main/templates/main.html`**.
+  *  Impor fungsi **`logout_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`logout_user`**.
       
-  * **Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal**
-    * Membuat akun pengguna baru dengan klik tombol **`Register now`** di halaman **`login`**.
-    * Masukkan username dan password sesuai syarat di halaman **`register`**
-    * Klik tombol **`+ Add Product`** di halaman utama, lalu isi keterangan dari produk yang ingin ditambahkan. Ulangi sampai kamu sudah menambahkan tiga produk.
-    * Lakukan tiga poin di atas untuk akun pengguna berikutnya.
+#### 4. Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal
+  * Membuat akun pengguna baru dengan klik tombol **`Register now`** di halaman **`login`**.
+  * Masukkan username dan password sesuai syarat di halaman **`register`**
+  * Klik tombol **`+ Add Product`** di halaman utama, lalu isi keterangan dari produk yang ingin ditambahkan. Ulangi sampai kamu sudah menambahkan tiga produk.
+  * Lakukan tiga poin di atas untuk akun pengguna berikutnya.
        
-  * **Menghubungkan model Product dengan User**
-    * abc
-  * **Menampilkan detail informasi pengguna yang sedang logged in**
-    * abc
+#### 5. Menghubungkan Model Product Dengan User
+  * Impor **`User`** di **`main/models.py`**.
+  * Tambahkan field **`user`** di model **`Product`**.
+  * Lakukan migrasi dengan cara **`python manage.py makemigrations`** dan **`python manage.py migrate`**.
+  * Modifikasi fungsi **`create_news`** di **`main/views.py`** agar kita bisa mengisi field **`user`** sebelum menyimpan objek hasil dari form.
+  * Modifikasi fungsi **`show_main`** di **`main/views.py`** agar menampilkan halaman utama dengan filter produk berdasarkan pembuatnya (semua atau dirinya sendiri).
+  * Tambahkan tombol filter My dan All di **`main.html`**.
+  * Tambahkan nama author di **`news_detail.html`**
+
+#### 6. Menampilkan detail informasi pengguna yang sedang logged in
+  * Modifikasi **`context`** di fungsi **`show_main`** dengan menggganti value dari **`'name'`** menjadi **`request.user.username`**.
+  * Modifikasi **`context`** di fungsi **`show_main`** dengan menggganti value dari **`'last_login'`** menjadi **`request.COOKIES.get('last_login', 'Never')`**.
+  * Karena fungsi **`show_main`** akan melakukan **`return render(request, "main.html",context)`**, username yang sedang login beserta waktu terakhir ia login akan ditampilkan di halaman utama.
 
 --- 
