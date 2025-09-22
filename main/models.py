@@ -54,4 +54,7 @@ class Product(models.Model):
 #     age = models.IntegerField(default=0)
 #     persona = models.TextField()
 
-    
+# class Car(models.Model):
+#     name = models.CharField(max_length=255)
+#     brand = models.CharField(max_length=255)
+#     stock = models.IntegerField(default=0)

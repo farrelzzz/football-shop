@@ -45,6 +45,21 @@ def create_product(request):
         }
     return render(request, "create_product.html", context)
 
+# @login_required(login_url='/login')
+# def create_car(request):
+#     form = CarForm(request.POST or None)
+
+#     if form.is_valid() and request.method == 'POST':
+#         news_entry = form.save(commit = False)
+#         news_entry.user = request.user
+#         news_entry.save()
+#         return redirect('main:show_main')
+
+#     context = {
+#         'form': form,
+#         }
+#     return render(request, "create_car.html", context)
+
 def show_product(request, id):
     product = get_object_or_404(Product, pk=id)
     product.increment_views()
