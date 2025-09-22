@@ -130,13 +130,25 @@ abc
 
 ---  
 ### Cara Pengerjaan  
-  * Mengimplementasikan fungsi registrasi, login, dan logout
+  * **Membuat Fungsi dan Form Registrasi**
+    * Impor **`UserCreationForm`** dan **`messages`** di **`views.py`**. 
+    * Membuat fungsi **`register`** di **`views.py`** untuk menghasilkan formulir registrasi secara otomatis dan menghasilkan akun pengguna ketika data di-submit dari form (menggunakan **`UserCreationForm`**), menampilkan pesan kepada pengguna setelah melakukan suatu aksi (menggunakan **`messages`**), lalu melakukan redirect setelah data form berhasil disimpan (dengan **`return redirect('main:show_main')`**).
+    * Membuat template HTML bernama **`register.html`** di **`main/templates`**.
+    * Impor fungsi **`register`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`register`**.
+      
+  * **Membuat fungsi dan form login**
+    * Impor **`AuthenticationForm`**, **`authenticate`**, dan `login`  di **`views.py`**.
+    * Membuat fungsi **`login_user`** di **`views.py`** untuk mengautentikasi pengguna yang ingin login, dengan cara: validasi form login (**`if request.method == 'POST'`**) dan buat session untuk untuk pengguna yang berhasil login (**`login(request, user)`**).
+    *  Membuat template HTML bernama **`login.html`** di **`main/templates`**.
+    *  Impor fungsi **`login_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`login_user`**.
+   
+  * **Membuat fungsi logout**
     * abc
-  * Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal
+  * **Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal**
     * abc
-  * Menghubungkan model Product dengan User
+  * **Menghubungkan model Product dengan User**
     * abc
-  * Menampilkan detail informasi pengguna yang sedang logged in
+  * **Menampilkan detail informasi pengguna yang sedang logged in**
     * abc
 
 --- 
