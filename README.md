@@ -179,6 +179,6 @@ Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampai
 
 #### 6. Menampilkan Detail Informasi Pengguna yang Sedang Logged In
   * Modifikasi **`context`** di fungsi **`show_main`** dengan menggganti value dari **`'name'`** menjadi **`request.user.username`** dan menggganti value dari **`'last_login'`** menjadi **`request.COOKIES.get('last_login', 'Never')`**.
-  * Karena fungsi **`show_main`** akan melakukan **`return render(request, "main.html",context)`**, username yang sedang login beserta waktu terakhir ia login akan ditampilkan di halaman utama.
+  * Karena fungsi **`show_main`** akan melakukan **`return render(request, "main.html", context)`**, maka username yang sedang login beserta waktu terakhir ia login akan ditampilkan di halaman utama.
 
 --- 
