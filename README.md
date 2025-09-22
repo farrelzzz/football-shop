@@ -130,22 +130,30 @@ abc
 
 ---  
 ### Cara Pengerjaan  
-  * **Membuat Fungsi dan Form Registrasi**
+  * **Membuat Mekanisme Registrasi**
     * Impor **`UserCreationForm`** dan **`messages`** di **`views.py`**. 
     * Membuat fungsi **`register`** di **`views.py`** untuk menghasilkan formulir registrasi secara otomatis dan menghasilkan akun pengguna ketika data di-submit dari form (menggunakan **`UserCreationForm`**), menampilkan pesan kepada pengguna setelah melakukan suatu aksi (menggunakan **`messages`**), lalu melakukan redirect setelah data form berhasil disimpan (dengan **`return redirect('main:show_main')`**).
-    * Membuat template HTML bernama **`register.html`** di **`main/templates`**.
+    * Membuat template HTML halaman **`register`** bernama **`register.html`** di **`main/templates`**.
     * Impor fungsi **`register`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`register`**.
       
-  * **Membuat fungsi dan form login**
-    * Impor **`AuthenticationForm`**, **`authenticate`**, dan `login`  di **`views.py`**.
+  * **Membuat Mekanisme login**
+    * Impor **`AuthenticationForm`**, **`authenticate`**, dan **`login`**  di **`views.py`**.
     * Membuat fungsi **`login_user`** di **`views.py`** untuk mengautentikasi pengguna yang ingin login, dengan cara: validasi form login (**`if request.method == 'POST'`**) dan buat session untuk untuk pengguna yang berhasil login (**`login(request, user)`**).
-    *  Membuat template HTML bernama **`login.html`** di **`main/templates`**.
+    *  Membuat template HTML halaman **`login`** bernama **`login.html`** di **`main/templates`**.
     *  Impor fungsi **`login_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`login_user`**.
    
-  * **Membuat fungsi logout**
-    * abc
+  * **Membuat Mekanisme logout**
+    * Impor **`logout`**  di **`views.py`**.
+    * Membuat fungsi **`logout_user`** di **`views.py`** untuk melakukan mekanisme **`logout`**, dengan cara: menghapus sesi pengguna yang saat ini masuk (dengan **`logout(request)`**) dan mengarahkan pengguna ke halaman login dalam aplikasi Django (dengan cara **`return redirect('main:login')`**).
+    * Menambahkan tombol logout di **`main/templates/main.html`**.
+    *  Impor fungsi **`logout_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`logout_user`**.
+      
   * **Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal**
-    * abc
+    * Membuat akun pengguna baru dengan klik tombol **`Register now`** di halaman **`login`**.
+    * Masukkan username dan password sesuai syarat di halaman **`register`**
+    * Klik tombol **`+ Add Product`** di halaman utama, lalu isi keterangan dari produk yang ingin ditambahkan. Ulangi sampai kamu sudah menambahkan tiga produk.
+    * Lakukan tiga poin di atas untuk akun pengguna berikutnya.
+       
   * **Menghubungkan model Product dengan User**
     * abc
   * **Menampilkan detail informasi pengguna yang sedang logged in**
