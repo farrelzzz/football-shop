@@ -110,7 +110,6 @@ Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang
 <img width="1783" height="724" alt="Screenshot 2025-09-15 221626" src="https://github.com/user-attachments/assets/ecc93b46-a2d0-4c5e-aa10-7b872eb11b34" />  
 
 ---  
-
 ## Tugas Individu 4  
 ### Apa itu Django AuthenticationForm?   
 Django AuthenticationForm merupakan form bawaan dari sistem autentikasi Django yang didesain khusus untuk mekanisme login pengguna dengan menyediakan fields yang dibutuhkan pada umumnya dan logika validasi untuk autentikasi pengguna. Kelebihannya adalah mudah digunakan dan sudah menyediakan fields juga logika validasi untuk autentikasi pengguna. Kekurangannya adalah sangat bergantung pada model User, sehingga jika kita mau menambahkan field khusus yang tidak ada di user lain misalnya, maka kita perlu override form-nya atau membuat form yang khusus untuk user tersebut.  
@@ -142,7 +141,7 @@ Django AuthenticationForm merupakan form bawaan dari sistem autentikasi Django y
 
 ---  
 ### Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?  
-abc
+Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampaikan sebelumnya, pihak ketiga bisa saja mengakses data pengguna yang disimpan di cookies dan menyalahgunakannya. Salah satu penanganan yang dilakukan Django adalah menggunakan token CSRF unik saat mengisi data di formulir HTML. Token CSRF akan dicocokkan dengan nilai di cookie CSRF saat permintaan POST diproses. Karena pihak ketiga tidak dapat mengetahui token ini, mereka tidak bisa membuat permintaan yang valid, sehingga melindungi dari serangan CSRF.
 
 ---  
 ### Cara Pengerjaan  
