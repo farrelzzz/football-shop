@@ -115,15 +115,15 @@ Tutorial yang diberikan mudah untuk dipahami. Kalaupun ada kendala, bantuan yang
 Django AuthenticationForm merupakan form bawaan dari sistem autentikasi Django yang didesain khusus untuk mekanisme login pengguna dengan menyediakan fields yang dibutuhkan pada umumnya dan logika validasi untuk autentikasi pengguna. Kelebihannya adalah mudah digunakan dan sudah menyediakan fields juga logika validasi untuk autentikasi pengguna. Kekurangannya adalah sangat bergantung pada model User, sehingga jika kita mau menambahkan field khusus yang tidak ada di user lain misalnya, maka kita perlu override form-nya atau membuat form yang khusus untuk user tersebut.  
 
 ---
-### Apa perbedaan antara autentikasi dan otorisasi? Bagaiamana Django mengimplementasikan kedua konsep tersebut?  
+### Apa Perbedaan Antara Autentikasi dan Otorisasi? Bagaiamana Django Mengimplementasikan Kedua Konsep Tersebut?  
 **`Autentikasi`** merupakan proses untuk memverifikasi siapa pengguna yang menggunakan web aplikasi, sedangkan **`Otorisasi`** merupakan proses untuk memverifikasi apa saja akses yang dimiliki user. Contoh implementasi **`Autentikasi`** oleh Django adalah mekanisme login pengguna dengan menggunakan **`AuthenticationForm`** dan fungsi **`login`** bawaan Django. Lalu, contoh implementasi **`Otorisasi`** oleh Django adalah mekanisme pengguna hanya bisa melihat halaman utama dan detail produk jika ia sudah login, caranya dengan menambahkan dekorator **`@login_requiered(login_url='/login')`** di fungsi-fungsi yang menampilkan halaman utama dan detail produk.
 
 ---  
-### Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web? 
+### Apa Saja Kelebihan dan Kekurangan Session dan Cookies Dalam Konteks Menyimpan State di Aplikasi web? 
   * Cookies
     * Kelebihan:
       * Penyimpanan jangka panjang karena data pengguna tetap disimpan di perangkatnya meski browser ditutup.
-      * Meningkatkan pengalaman pengguna.
+      * Implementasinya lebih sederhana.
       * Proses yang cepat karena datanya disimpan di sisi klien dan mengurangi beban kerja server.
     * Kekurangan
       * Ukuran penyimpanan terbatas.
@@ -133,14 +133,13 @@ Django AuthenticationForm merupakan form bawaan dari sistem autentikasi Django y
     * Kelebihan
       * Keamanan yang lebih baik karena informasi yang disimpan di server lebih terjaga.
       * Ukuran penyimpanan yang lebih besar.
-      * Tidak ada transmisi/pengiriman data, sehingga kinerja jadi lebih cepat.
     * Kekurangan
       * Berakhir saat browser ditutup
       * Overhead kinerja
       * Implementasinya lebih kompleks
 
 ---  
-### Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?  
+### Apakah Penggunaan Cookies Aman Secara Default Dalam Pengembangan Web, atau Apakah Ada Risiko Potensial yang Harus Diwaspadai? Bagaimana Django Menangani Hal Tersebut?  
 Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampaikan sebelumnya, pihak ketiga bisa saja mengakses data pengguna yang disimpan di cookies dan menyalahgunakannya. Salah satu penanganan yang dilakukan Django adalah menggunakan token CSRF unik saat mengisi data di formulir HTML. Token CSRF akan dicocokkan dengan nilai di cookie CSRF saat permintaan POST diproses. Karena pihak ketiga tidak dapat mengetahui token ini, mereka tidak bisa membuat permintaan yang valid, sehingga melindungi dari serangan CSRF.
 
 ---  
@@ -163,7 +162,7 @@ Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampai
   * Menambahkan tombol logout di **`main/templates/main.html`**.
   *  Impor fungsi **`logout_user`** tadi di **`main/urls.py`**, lalu tambahkan path url ke dalam urlpatterns untuk mengakses fungsi **`logout_user`**.
       
-#### 4. Membuat dua (2) akun pengguna dengan masing-masing tiga (3) dummy data di lokal
+#### 4. Membuat Dua (2) Akun Pengguna Dengan Masing-masing Tiga (3) Dummy Data di Lokal
   * Membuat akun pengguna baru dengan klik tombol **`Register now`** di halaman **`login`**.
   * Masukkan username dan password sesuai syarat di halaman **`register`**
   * Klik tombol **`+ Add Product`** di halaman utama, lalu isi keterangan dari produk yang ingin ditambahkan. Ulangi sampai kamu sudah menambahkan tiga produk.
@@ -178,7 +177,7 @@ Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampai
   * Tambahkan tombol filter My dan All di **`main.html`**.
   * Tambahkan nama author di **`news_detail.html`**
 
-#### 6. Menampilkan detail informasi pengguna yang sedang logged in
+#### 6. Menampilkan Detail Informasi Pengguna yang Sedang Logged In
   * Modifikasi **`context`** di fungsi **`show_main`** dengan menggganti value dari **`'name'`** menjadi **`request.user.username`**.
   * Modifikasi **`context`** di fungsi **`show_main`** dengan menggganti value dari **`'last_login'`** menjadi **`request.COOKIES.get('last_login', 'Never')`**.
   * Karena fungsi **`show_main`** akan melakukan **`return render(request, "main.html",context)`**, username yang sedang login beserta waktu terakhir ia login akan ditampilkan di halaman utama.
