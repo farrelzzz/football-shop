@@ -31,7 +31,7 @@ def show_main(request):
     return render(request, "main.html", context)
 
 @login_required(login_url='/login')
-def create_product(request):
+def add_product(request):
     form = ProductForm(request.POST or None)
 
     if form.is_valid() and request.method == 'POST':
@@ -43,7 +43,7 @@ def create_product(request):
     context = {
         'form': form,
         }
-    return render(request, "create_product.html", context)
+    return render(request, "add_product.html", context)
 
 def show_product(request, id):
     product = get_object_or_404(Product, pk=id)
