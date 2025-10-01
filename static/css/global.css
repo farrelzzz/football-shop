@@ -1,23 +1,23 @@
 .form-style form input, form textarea, form select {
     width: 100%;
     padding: 0.5rem;
-    border: 2px solid #4b5563; /* Warna border abu-abu gelap (gray-600) */
+    border: 2px solid #ffffff; /* Warna border putih terang */
     border-radius: 0.375rem;
     background-color: #374151; /* Warna latar abu-abu gelap (gray-700) */
     color: #ffffff; /* Warna teks putih */
 }
 .form-style form input:focus, form textarea:focus, form select:focus {
     outline: none;
-    border-color: #16a34a;
+    border-color: #009dff; /*ubah dari biru terang ke biru gelap*/
     /* Box-shadow diubah agar lebih terlihat di background gelap */
-    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.5);
+    box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.994);
 }
 
 .form-style input[type="checkbox"] {
     width: 1.25rem;
     height: 1.25rem;
     padding: 0;
-    border: 2px solid #4b5563; /* Border abu-abu gelap */
+    border: 2px solid #ffffff; /* Border putih */
     border-radius: 0.375rem;
     background-color: #374151; /* Latar belakang abu-abu gelap */
     cursor: pointer;
@@ -28,8 +28,8 @@
 }
 
 .form-style input[type="checkbox"]:checked {
-    background-color: #16a34a;
-    border-color: #16a34a;
+    background-color: #009dff;
+    border-color: #002aff;
 }
 
 .form-style input[type="checkbox"]:checked::after {
@@ -45,6 +45,6 @@
 
 .form-style input[type="checkbox"]:focus {
     outline: none;
-    border-color: #16a34a;
-    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.5);
+    border-color: #009dff;
+    box-shadow: 0 0 0 3px rgba(0, 98, 255, 0.994);
 }
