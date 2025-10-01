@@ -1,4 +1,4 @@
-# Football Shop ⚽️
+d# Football Shop ⚽️
 Tugas Individu PBP Ganjil 25/26  
 Muhammad Farrel Rajendra - 2406495653 - PBP D  
 Link Website: https://muhammad-farrel46-footballshop.pbp.cs.ui.ac.id/  
@@ -185,9 +185,27 @@ Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampai
 
 ## Tugas Individu 5 
 ### Urutan Prioritas Pengambilan CSS Selector untuk suatu elemen HTML 
+ 1. Inline Style (semua yang ada di style tag):  style yang ditulis langsung di dalam tag HTML menggunakan atribut style.
+ 2. ID Selector: menggunakan ID pada tag sebagai selector-nya. ID bersifat unik dalam satu halaman web. ID dapat ditambahkan pada halaman template HTML.
+ 3. Classes Selector: memungkinkan kita untuk mengelompokkan elemen dengan karakteristik yang sama..
+ 4. Eleement Selector: memungkinkan kita mengubah properti untuk semua elemen yang memiliki tag HTML yang sama. 
+   
 ### Pentingyna Responsive Design Dalam Pengembangan Aplikasi Web
+  * Responsive design penting diterapkan karena menjangkau pengguna di semua perangkat, meningkatkan pengalaman pengguna, peringkat SEO yang lebih baik, efisiensi dalam pemeliharan dan pengembangan, dan bisa meningkatkan penjualan.
+  * Contoh aplikasi dengan responsive design: theguardian.com, karena tata letaknya bisa menyesuaikan dengan ukuran layar perangkat milik pengguna, sehingga penggunaannya lebih mudah.
+  * Contoh aplikasi tanpa responsive design: spacejam.com, karena tata letak di laptop dengan di hp sama saja, tidak disesuaikan, sehingga penggunaannya kurang nyaman.
 ### Perbedaan Antara Margin, Border, dan Padding, Serta Cara Implementasinya
+Margin adalah ruang transparan di luar elemen yang berfungsi untuk memberi jarak antara elemen tersebut dengan elemen lainnya. Border adalah garis yang mengelilingi elemen, tepat di luar padding. Sementara itu, Padding adalah ruang transparan di dalam border yang menciptakan jarak antara border dengan konten elemen itu sendiri.
+Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, kita isi saja margin: {jarak}px, border: {jarak}px, dan padding: {jarak}px.
+
 ### Konsep Flex Box dan Grid Layout Beserta Kegunaannya
+  * Flexbox
+    * dirancang untuk mengatur ruang di antara item dalam sebuah wadah (container), meski saat ukurannya tidak diketahui.     * sangat fleksibel dan bekerja di sepanjang satu sumbu saja, baik horizontal maupun vertikal.
+    * bisa digunakan untuk membuat navigasi bar, layout komponen kecil, dan distribusi ruang.
+  * Grid
+    * dirancang untuk menangani tata letak halaman yang kompleks
+    * dengan grid kita bisa membuat sumbu baris dan kolom secara bersamaan seperti di microsoft excel, sehingga penempatannya lebih presisi.
+    * bisa digunakan untuk membuat tata letak halaman utama, galeri gambar, sampai form yang lebih advanced.
 
 ### Cara Pengerjaan
 #### 1. Implementasi Fungsi Menghapus Produk
