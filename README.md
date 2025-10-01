@@ -182,3 +182,27 @@ Secaara default, penggunaan cookies tidak sepenuhnya aman. Seperti yang disampai
   * Karena fungsi **`show_main`** akan melakukan **`return render(request, "main.html", context)`**, maka username yang sedang login beserta waktu terakhir ia login akan ditampilkan di halaman utama.
 
 --- 
+
+## Tugas Individu 5 
+### Urutan Prioritas Pengambilan CSS Selector untuk suatu elemen HTML 
+### Pentingyna Responsive Design Dalam Pengembangan Aplikasi Web
+### Perbedaan Antara Margin, Border, dan Padding, Serta Cara Implementasinya
+### Konsep Flex Box dan Grid Layout Beserta Kegunaannya
+
+### Cara Pengerjaan
+#### 1. Implementasi Fungsi Menghapus Produk
+#### 2. Implementasi Fungsi Mengedit Produk
+#### 3. Kustomisasi Halaman Login
+#### 4. Kustomisasi Halaman Register
+#### 5. Kustomisasi Halaman Tambah Produk
+#### 6. Kustomisasi Halaman Edit Produk
+#### 7. Kustomisasi Halaman Detail Produk
+#### 8. Kustomisasi Halaman Daftar Produk
+  * Jika pada aplikasi belum ada product yang tersimpan, halaman daftar product akan menampilkan gambar dan pesan bahwa belum ada product yang terdaftar.
+  * Jika sudah ada product yang tersimpan, halaman daftar product akan menampilkan detail setiap product dengan menggunakan
+#### 9. Buat Tombol Edit dan Hapus Produk Untuk Setiap Card Product
+#### Buat Navigation Bar Untuk Fitur-fitur pada Aplikasi yang Responsive Terhadap Perbedaan Ukuran Device, Khususnya Mobile dan Desktop.
+
+
+
+
