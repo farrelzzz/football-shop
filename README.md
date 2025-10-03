@@ -928,7 +928,7 @@ Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, k
    * Penggunaan: Jarang digunakan untuk operasi I/O (Input/Output) yang memakan waktu lama di client-side (seperti AJAX) karena buruk bagi User Experience.
      
  * Asynchronus Request
-   * Non-Bloking: Kode tidak berhenti dan tidak menunggu respons. Saat permintaan dikirim eksekusi kode langsung lanjut ke baris berikutnya.
+   * Non-Blocking: Kode tidak berhenti dan tidak menunggu respons. Saat permintaan dikirim eksekusi kode langsung lanjut ke baris berikutnya.
    * Pengalaman Pengguna (User Experience): di browser, antarmuka pengguna (User Interface) tetap responsif karena thread utama UI tidak diblokir, sehingga pengguna masih bisa berinteraksi dengan halaman.
    * Penggunaan: umum digunakan untuk sebagian besar interaksi jaringan di web modern (misalnya, menggunakan AJAX, Fetch API, atau XMLHttpRequest dengan pengaturan asinkron) karena meningkatkan User Experience.
 
