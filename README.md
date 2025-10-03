@@ -920,7 +920,37 @@ Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, k
     </script>
   </nav>
 ```
+## Tugas Individu 6
+### Perbedaan Synchronus Request dengan Asynchronus Request
+ * Synchronus Request
+   * Blocking: kode akan berhenti dan menunggu sampai respons dari server sudah selesai sebelum melanjutka eksekusi kode berikutnya.
+   * Pengalaman Pengguna (User Experience): di browser, antarmuka pengguna (User Interface) jadi tidak responsif selama request berlangsung karena thread utama yang menangani User Interface juga di-blocking.
+   * Penggunaan: Jarang digunakan untuk operasi I/O (Input/Output) yang memakan waktu lama di client-side (seperti AJAX) karena buruk bagi User Experience.
+     
+ * Asynchronus Request
+   * Non-Bloking: Kode tidak berhenti dan tidak menunggu respons. Saat permintaan dikirim eksekusi kode langsung lanjut ke baris berikutnya.
+   * Pengalaman Pengguna (User Experience): di browser, antarmuka pengguna (User Interface) tetap responsif karena thread utama UI tidak diblokir, sehingga pengguna masih bisa berinteraksi dengan halaman.
+   * Penggunaan: umum digunakan untuk sebagian besar interaksi jaringan di web modern (misalnya, menggunakan AJAX, Fetch API, atau XMLHttpRequest dengan pengaturan asinkron) karena meningkatkan User Experience.
 
+### Alur Request-Response AJAX di Django
+<img width="569" height="324" alt="image" src="https://github.com/user-attachments/assets/3cee98f5-493d-4980-ac6f-d27d4d85809a" />
+
+  1. Sebuah event terjadi pada halaman web (contohnya tombol submit data ditekan
+  2. Sebuah XMLHttpRequest object dibuat oleh JavaScript
+  3. XMLHttpRequest object mengirimkan request ke server
+  4. Server memproses request tersebut
+  5. Server mengembalikan response kembali kepada halaman web
+  6. Response dibaca oleh JavaScript
+  7. Aksi berikutnya akan dipicu oleh JavaScript sesuai dengan langkah yang dibuat (contohnya memperbarui data di halaman tersebut)
+  (kredit: https://pbp-fasilkom-ui.github.io/ganjil-2026/docs/tutorial-5)
+
+### Keuntungan Mengguanakan AJAX Dibandingkan Render Biasa di Django
+  * Lebih Responsif karena pengguna tidak perlu menunggu seluruh halaman dimuat ulang hanya untuk perubahan kecil, sehingga memberikan User Experience yang lebih baik.
+  * Serveer hanya mengirimkan data yang diperlukan (misal dalam format JSON), bukan seluruh markup HTML, CSS, atau aset lainnya, sehinffa proses dari request sampai response jadi lebih cepat.
+  * Hemat bandwith dan mengurangi beban server karena hanya memerlukan data mentah, sehingga server tidak perlu menghabiskan waktu dan sumber daya untuk merender ulang seluruh template HTML untuk setiap pembaruan kecil.
+     
+### Cara Memastikan Keamanan Saat Menggunakan AJAX Untuk Fitur Login Dan Register di Django
+### Bagaimana AJAX Memengaruhi Pengalaman Pengguna (User Experince) pada Website
 
 
 
