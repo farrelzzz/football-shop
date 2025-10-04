@@ -920,6 +920,7 @@ Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, k
     </script>
   </nav>
 ```
+---
 ## Tugas Individu 6
 ### Perbedaan Synchronous Request dengan Asynchronous Request
  * Synchronous Request
@@ -970,5 +971,6 @@ Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, k
 ### Bagaimana AJAX Memengaruhi Pengalaman Pengguna (User Experience) pada Website
 AJAX bisa membuat website lebih responsif dan terasa lebih cepat karena membuat pengguna tidak perlu menunggu lama untuk melihat pembaruan yang dia lakukan di website. Hal itu bisa terjadi karena AJAX hanya memuat data yang benar-benar baru/diperlukan, bukan semua markup HTML, CSS, dan aset lainnya. Selain itu, AJAX bekerja secara asynchronous, sehingga permintaan yang dikirimkan bisa dikerjakan tanpa menunggu permintaan saat ini selesai dahulu dan tanpa mengurangi interaksi pengguna dengan elemen User Interface lainnya.
 
+---
 
 
