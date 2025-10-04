@@ -921,13 +921,13 @@ Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, k
   </nav>
 ```
 ## Tugas Individu 6
-### Perbedaan Synchronus Request dengan Asynchronus Request
- * Synchronus Request
+### Perbedaan Synchronous Request dengan Asynchronous Request
+ * Synchronous Request
    * Blocking: kode akan berhenti dan menunggu sampai respons dari server sudah selesai sebelum melanjutka eksekusi kode berikutnya.
    * Pengalaman Pengguna (User Experience): di browser, antarmuka pengguna (User Interface) jadi tidak responsif selama request berlangsung karena thread utama yang menangani User Interface juga di-blocking.
    * Penggunaan: Jarang digunakan untuk operasi I/O (Input/Output) yang memakan waktu lama di client-side (seperti AJAX) karena buruk bagi User Experience.
      
- * Asynchronus Request
+ * Asynchronous Request
    * Non-Blocking: Kode tidak berhenti dan tidak menunggu respons. Saat permintaan dikirim eksekusi kode langsung lanjut ke baris berikutnya.
    * Pengalaman Pengguna (User Experience): di browser, antarmuka pengguna (User Interface) tetap responsif karena thread utama UI tidak diblokir, sehingga pengguna masih bisa berinteraksi dengan halaman.
    * Penggunaan: umum digunakan untuk sebagian besar interaksi jaringan di web modern (misalnya, menggunakan AJAX, Fetch API, atau XMLHttpRequest dengan pengaturan asinkron) karena meningkatkan User Experience.
@@ -950,7 +950,25 @@ Cara implementasinya adalah di dalam file .css kita di suatu .elemen misalnya, k
   * Hemat bandwith dan mengurangi beban server karena hanya memerlukan data mentah, sehingga server tidak perlu menghabiskan waktu dan sumber daya untuk merender ulang seluruh template HTML untuk setiap pembaruan kecil.
      
 ### Cara Memastikan Keamanan Saat Menggunakan AJAX Untuk Fitur Login Dan Register di Django
-### Bagaimana AJAX Memengaruhi Pengalaman Pengguna (User Experince) pada Website
+  * Perlindungan terhadap CSRF (Cross-Site Request Forgery)
+    * Pastikan setiap permintaan (request) AJAX dengan POST ke view Django menyertakan CSRF Token yang valid.
+    * Django bisa menolak jika permintaan tidak memiliki token atau tokennya tidak cocok.
+    * CSRF Token bisa didapatkan dari cookie.
+  * Enkripsi Data (HTTPS)
+    * Selalu gunakan HTTPS di lingkungan (environment) produksi.
+    * HTTPS mengenkripsi semua data yang dikirimkan antara browser pengguna dan server, sehingga username dan password yang dikirimkan (saat kita login misalnya) tidak terlihat oleh pihak ketiga.
+  * Validasi Data di Sisi Server
+    * Meski sudah melakukan validasi di sisi klien dengan JavaScript, kita perlu validasi lagi di sisi server Django agar lebih aman.
+    * Kita bisa menggunakan Forms atau Rest Framework Serializers milik Django untuk memastikan data-data yang dikirim pengguna formatnya sudah benar dan aman. 
+  * Pengelolaan Sesi dan Otentikasi
+    * Setelah login berhasil melalui AJAX, kita bisa gunakan fungsi bwaan Django untuk menetapkan sesi kepada pengguna dan mengurus pembuatan cookie sesi yang aman. Fungsi yang dimaksud adalah **`django.contrib.auth.login(request, user)`**
+    * Pastikan password yang disimpan di basis data sudah di-hash 
+  * Menghindari Pengembalian Data Sensitif
+    * Meminimalkan respons JSON dengan hanya mengirimkan informasi yang dibutuhkan saja. Misal saat kita login, JSON hanya mengirimkan pesan login-nya sukses atau gagal.
+    * Jangan pernah menyertakan data sensitif (seperti password) dalam respons JSON yang dikirim kembali ke browser.
+       
+### Bagaimana AJAX Memengaruhi Pengalaman Pengguna (User Experience) pada Website
+AJAX bisa membuat website lebih responsif dan terasa lebih cepat karena membuat pengguna tidak perlu menunggu lama untuk melihat pembaruan yang dia lakukan di website. Hal itu bisa terjadi karena AJAX hanya memuat data yang benar-benar baru/diperlukan, bukan semua markup HTML, CSS, dan aset lainnya. Selain itu, AJAX bekerja secara asynchronous, sehingga permintaan yang dikirimkan bisa dikerjakan tanpa menunggu permintaan saat ini selesai dahulu dan tanpa mengurangi interaksi pengguna dengan elemen User Interface lainnya.
 
 
 
