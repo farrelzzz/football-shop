@@ -38,7 +38,7 @@
         </div>
       {% endif %}
 
-      <form method="POST" action="" class="space-y-6">
+      <form id="loginForm" method="POST" action="" class="space-y-6">
         {% csrf_token %}
         
         <div>
@@ -102,4 +102,58 @@
     </div>
   </div>
 </div>
+
+<script>
+// async function addProductEntry() {
+//     const response = await fetch("{% url 'main:login-ajax' %}", {
+//       method: "POST",
+//       body: new FormData(document.querySelector('#productForm')),
+//     })
+
+//     document.getElementById("productForm").reset();
+//     hideModal();
+      
+//     // Show toast notification
+//     const data = await response.json()
+//     showToast(data.title, data.message, data.status);
+
+//     return false;
+//   }
+
+//   document.getElementById("productForm").addEventListener("submit", function(e) {
+//     e.preventDefault();
+//     addProductEntry();
+//   })
+
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const response = await fetch("{% url 'main:login-ajaxterima' %}", {
+        method: 'POST',
+        body: new FormData(form)
+    });
+
+    // `response.ok` akan bernilai `true` jika status 200-299
+    // dan `false` jika 401 (gagal login).
+    if (response.ok) {
+        // Logika jika login sukses
+        window.location.href = '';
+        showToast('Login Successful', 'Find your football needs and elevate your play!', 'success');
+    } else {
+        // --- LOGIKA JIKA GAGAL ---
+
+        // 1. Buat dan kirim custom event (sama seperti sebelumnya)
+        // const loginFailedEvent = new CustomEvent('loginFailed', { /* ... */ });
+        //document.dispatchEvent('loginFailed');
+
+        // 2. Tampilkan pesan error di halaman
+        showToast('Login Failed', 'Please enter a correct username and password. Note that both fields may be case-sensitive.', 'error');
+
+        // 3. Kosongkan isian form secara langsung menggunakan JavaScript
+        form.reset(); 
+    }
+})
+
+</script>
 {% endblock content %}

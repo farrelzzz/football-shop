@@ -183,3 +183,62 @@ def add_product_entry_ajax(request):
     new_product.save()
 
     return HttpResponse(b"CREATED", status=201)
+
+
+@require_POST
+def login_ajax(request):
+    # form = AuthenticationForm(data=request.POST)
+
+    # if form.is_valid():
+    #     user = form.get_user()
+    #     login(request, user)
+        
+    #     # Siapkan data JSON untuk respons sukses
+    #     response_data = {
+    #         'status': 'success',
+    #         'title' : 'Login Successful',
+    #         'message': 'Find The Gear You Need And Elevate Your Play!',
+    #         #'customEvent' : 'loginSuccessful',
+    #         #'redirect_url': reverse('main:show_main')
+    #     }
+        
+    #     response = JsonResponse(response_data)
+    #     # Set cookie setelah login berhasil
+    #     response.set_cookie('last_login', str(datetime.datetime.now()))
+    #     return response
+    # else:
+    #     # Jika form tidak valid, kirim error sebagai JSON
+    #     # return JsonResponse({
+    #     #     'status': 'error',
+    #     #     'errors': form.errors.get_json_data()
+    #     # }, status=400) # Status 400 Bad Request
+
+    #     return JsonResponse({
+    #         'status': 'error',
+    #         'title': 'Login Failed',
+    #         'message': "Please enter a correct username and password. Note that both fields may be case-sensitive.",
+    #         #'customEvent' : 'loginFailed',
+    #     }) 
+
+    # form = AuthenticationForm(data=request.POST)
+
+    # if form.is_valid():
+    #     user = form.get_user()
+    #     login(request, user)
+    #     response = HttpResponse(b"SUCCESS", status=200)
+    #     response.set_cookie('last_login', str(datetime.datetime.now()))
+    #     return response
+    # else:
+    #     # INI BAGIAN PENTING: Kembalikan status error jika login gagal.
+    #     # JavaScript akan mendeteksi status 401 ini.
+    #     return HttpResponse(b"INVALID_CREDENTIALS", status=401)
+
+    form = AuthenticationForm(data=request.POST)
+
+    if form.is_valid():
+        user = form.get_user()
+        login(request, user)
+        response = HttpResponse(form)
+        response.set_cookie('last_login', str(datetime.datetime.now()))
+    return response
+   
