@@ -26,7 +26,7 @@ function showToast(title, message, type = 'normal', duration = 3000) {
         toastComponent.style.border = '3px solid #d1d5db';
     }
 
-    // toastTitle.textContent = title;
+    toastTitle.textContent = title;
     toastMessage.textContent = message;
 
     toastComponent.classList.remove('opacity-0', 'translate-y-64');
