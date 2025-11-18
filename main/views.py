@@ -12,6 +12,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.utils.html import strip_tags
+import requests
 
 
 @login_required(login_url='/login')
@@ -76,6 +77,8 @@ def show_json(request):
             'created_at': product.created_at.isoformat() if product.created_at else None,
             'is_featured': product.is_featured,
             'user_id': product.user_id, # user_id dapat dari mana ya?
+            'price': product.price,
+            'stock': product.stock,
         }
         for product in product_list
     ]
@@ -104,6 +107,8 @@ def show_json_by_id(request, product_id):
             'is_featured': product.is_featured,
             'user_id': product.user_id,
             'user_username': product.user.username if product.user_id else None,
+            'price': product.price,
+            'stock': product.stock,
         }
         return JsonResponse(data)
     except Product.DoesNotExist:
@@ -171,6 +176,9 @@ def add_product_entry_ajax(request):
     thumbnail = request.POST.get("thumbnail")
     is_featured = request.POST.get("is_featured") == 'on'  # checkbox handling
     user = request.user
+    price = request.POST.get("price")
+    stock = request.POST.get("stock")
+
 
     new_product = Product(
         name=name, 
@@ -178,8 +186,28 @@ def add_product_entry_ajax(request):
         category=category,
         thumbnail=thumbnail,
         is_featured=is_featured,
-        user=user
+        user=user,
+        price=price,
+        stock=stock
     )
     new_product.save()
 
     return HttpResponse(b"CREATED", status=201)
+
+def proxy_image(request):
+    image_url = request.GET.get('url')
+    if not image_url:
+        return HttpResponse('No URL provided', status=400)
+    
+    try:
+        # Fetch image from external source
+        response = requests.get(image_url, timeout=10)
+        response.raise_for_status()
+        
+        # Return the image with proper content type
+        return HttpResponse(
+            response.content,
+            content_type=response.headers.get('Content-Type', 'image/jpeg')
+        )
+    except requests.RequestException as e:
+        return HttpResponse(f'Error fetching image: {str(e)}', status=500)

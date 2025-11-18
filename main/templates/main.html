@@ -138,6 +138,8 @@ function buildNewsCardElement(item) {
     const linkDelete = `{% url 'main:delete_product' '00000000-0000-0000-0000-000000000000' %}`.replace('00000000-0000-0000-0000-000000000000', item.id);
 
     const title = DOMPurify.sanitize(item.name);
+    const price = DOMPurify.sanitize(item.price);
+    const stock = DOMPurify.sanitize(item.stock);
     const content = DOMPurify.sanitize(item.description);
     const category = DOMPurify.sanitize(item.category);
     const thumbnail = DOMPurify.sanitize(item.thumbnail);
@@ -184,6 +186,9 @@ function buildNewsCardElement(item) {
           <h3 class="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 leading-tight">
             <a href="${linkDetail}" class="hover:text-green-600 transition-colors">${title}</a>
           </h3>
+          <h2 class="text-s font-semibold text-gray-900 mb-3 line-clamp-2 leading-tight">
+            <span>Rp ${price} | Stock: ${stock}</span>
+          </h2>
           <p class="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">${content}</p>
           <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
             <a href="${linkDetail}" class="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors">Read more</a>
