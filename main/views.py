@@ -13,6 +13,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.utils.html import strip_tags
 import requests
+import json
+
 
 
 @login_required(login_url='/login')
@@ -211,3 +213,33 @@ def proxy_image(request):
         )
     except requests.RequestException as e:
         return HttpResponse(f'Error fetching image: {str(e)}', status=500)
+    
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        name = strip_tags(data['name']) # strip HTML tags!
+        description = strip_tags(data['description']) # strip HTML tags!
+        category = data['category']
+        thumbnail = data['thumbnail']
+        is_featured = data['is_featured'] == 'on'  # checkbox handling
+        user = request.user
+        price = data['price']
+        stock = data['stock']
+
+
+        new_product = Product(
+            name=name, 
+            description=description,
+            category=category,
+            thumbnail=thumbnail,
+            is_featured=is_featured,
+            user=user,
+            price=price,
+            stock=stock
+        )
+        new_product.save()
+        
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
